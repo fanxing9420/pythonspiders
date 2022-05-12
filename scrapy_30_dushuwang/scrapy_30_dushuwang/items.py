@@ -6,7 +6,9 @@
 import scrapy
 
 
-class Scrapy2658TcItem(scrapy.Item):
+class Scrapy30DushuwangItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    # pass
+    name=scrapy.Field()
+    src=scrapy.Field()

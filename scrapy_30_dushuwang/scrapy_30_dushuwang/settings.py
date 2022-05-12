@@ -1,4 +1,4 @@
-# Scrapy settings for scrapy_26_58tc project
+# Scrapy settings for scrapy_30_dushuwang project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,23 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'scrapy_26_58tc'
+BOT_NAME = 'scrapy_30_dushuwang'
 
-SPIDER_MODULES = ['scrapy_26_58tc.spiders']
-NEWSPIDER_MODULE = 'scrapy_26_58tc.spiders'
+SPIDER_MODULES = ['scrapy_30_dushuwang.spiders']
+NEWSPIDER_MODULE = 'scrapy_30_dushuwang.spiders'
+
+# 数据库
+DB_HOST='192.168.121.128'
+DB_PORT=3306
+DB_USER='root'
+DB_PASSWORD='123456'
+DB_NAME='pythonspider'
+DB_CHARSET='utf8'
+
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'scrapy_26_58tc (+http://www.yourdomain.com)'
+#USER_AGENT = 'scrapy_30_dushuwang (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 # ROBOTSTXT_OBEY = True
@@ -45,13 +54,13 @@ NEWSPIDER_MODULE = 'scrapy_26_58tc.spiders'
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'scrapy_26_58tc.middlewares.Scrapy2658TcSpiderMiddleware': 543,
+#    'scrapy_30_dushuwang.middlewares.Scrapy30DushuwangSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'scrapy_26_58tc.middlewares.Scrapy2658TcDownloaderMiddleware': 543,
+#    'scrapy_30_dushuwang.middlewares.Scrapy30DushuwangDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -62,9 +71,10 @@ NEWSPIDER_MODULE = 'scrapy_26_58tc.spiders'
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'scrapy_26_58tc.pipelines.Scrapy2658TcPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'scrapy_30_dushuwang.pipelines.Scrapy30DushuwangPipeline': 300,
+   'scrapy_30_dushuwang.pipelines.MysqlPipeline':301,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
