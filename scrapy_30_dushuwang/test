@@ -1,0 +1,9 @@
+1.创建项目
+scrapy startproject scrapy_30_dushuwang
+
+2.跳转到spiders文件目录下
+cd .\scrapy_30_dushuwang\scrapy_30_dushuwang\spiders\
+
+3.创建爬虫文件
+scrapy genspider -t crawl read https://www.dushu.com/book/1188.html
+scrapy genspider -t crawl 爬虫文件名字 爬取的域名
